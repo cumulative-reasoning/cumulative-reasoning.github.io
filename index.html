@@ -200,26 +200,6 @@
 <!-- A section -->
 <section class="section">
   <div class="container is-max-desktop">
-
-    <!-- A subsection -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Introduction</h2>
-        <div class="content has-text-justified">
-          <p>
-            Despite remarkable advances in large language models (LLMs), they often struggle to consistently provide accurate solutions for complex logical inference tasks. To address the limitations, Andrew Chi-Chih Yao and Yang Yuan’s research team recently proposed a “Cumulative Reasoning (CR)” framework, which has significantly boosted the accuracy rate by achieving 98% precision in logical inference tasks and realized 43% relative improvement in the most challenging level 5 MATH problems.
-          </p>
-          <p>
-            Previous approaches, such as the Chain-of Thought (CoT) that “prompts the model to provide stepwise solutions” and the Tree-of-Thought (ToT) that “models the thinking process as a thought search tree”, have overlooked the site for storing intermediate results. The CR framework has been designed to fill the gap by decomposing unmanageable tasks into atomic steps and maintaining a storage site for intermediate results. 
-          </p>
-          <p>
-            Specifically, the CR algorithm utilizes three distinct types of LLMs: the proposer, verifier, and reporter. When the proposer model suggests next steps based on the given context, the verifier model scrutinizes the proposed steps and then adds validated steps to the ongoing reasoning context. Meanwhile, the reporter model evaluates when the iterative and cumulative reasoning process can be completed.            
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- End a subsection -->
-    <br>
     <!-- A subsection -->
     <div class="columns is-centered">
       <div class="column is-full-width">

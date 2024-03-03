@@ -228,8 +228,14 @@
           <p>
             In this section, we first describe the overall framework of Cumulative Reasoning (CR).
             Cumulative Reasoning (CR) uses three distinct types of LLMs (AI Agents):
+          </p>
+          <p>
             1. Proposer. This model suggests the next step based on the current context.
+          </p>
+          <p>
             2. Verifier(s). This model or set of models scrutinizes the accuracy of the step put forward by the proposer. If the step is deemed correct, it will be added to the context.
+          </p>
+          <p>
             3. Reporter. This model determines when the reasoning process should be concluded, by assessing whether the current conditions can directly lead to the final solution.    
           </p>
         </div>
@@ -240,7 +246,7 @@
 
         <div class="content has-text-justified">
           <p>
-            See the Figure for an illustration. In each iteration, the proposer initiates the process by proposing one or a few
+            See the Figure 2 for an illustration. In each iteration, the proposer initiates the process by proposing one or a few
             new claim(s) based on existing predicates. Subsequently, the verifier(s) evaluate the proposal, determining
             whether the claim(s) can be retained as a new predicate. Finally, the reporter decides if it is the optimal time to
             cease the thought process and deliver the answer.          
@@ -280,7 +286,7 @@
       </div>
     </div>
     <!-- End a subsection -->
-    
+
   </div>
 </section>
 <!-- End a section -->

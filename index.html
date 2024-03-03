@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>ChatDB: Augmenting LLMs with Databases as Their Symbolic Memory</title>
+  <title>Cumulative Reasoning with Large Language Models</title>
   <link rel="icon" type="image/x-icon" href="static/images/db.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -138,7 +138,6 @@
     <div class="hero-body">
       <img src="static/images/cr-illustration.png" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-justified">
-        An illustration of Cumulative Reasoning (CR) for a 3-premises problem.
       </h2>
     </div>
   </div>
@@ -224,28 +223,20 @@
     <!-- A subsection -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">ChatDB</h2>
+        <h2 class="title is-3">Cumulative Reasoning</h2>
         <div class="content has-text-justified">
           <p>
             In this section, we first describe the overall framework of Cumulative Reasoning (CR).
-            Given a user input in natural language and optional schemas of existing tables in the database
-            (not required if there are no existing tables), ChatDB aims to manipulate the symbolic memory
-            (i.e., the external database) and perform multi-hop reasoning to respond to the user's input.
-            Then, we delve into the details of the chain-of-memory, which is the crucial component of ChatDB.
+            Cumulative Reasoning (CR) uses three distinct types of LLMs (AI Agents):
+            1. Proposer. This model suggests the next step based on the current context.
+            2. Verifier(s). This model or set of models scrutinizes the accuracy of the step put forward by the proposer. If the step is deemed correct, it will be added to the context.
+            3. Reporter. This model determines when the reasoning process should be concluded, by assessing whether the current conditions can directly lead to the final solution.    
           </p>
         </div>
 
         <br>
 
         <h2 class="title is-4">Framework Overview</h2>
-        
-        <h2 class="subtitle has-text-justified">
-        Cumulative Reasoning (CR) uses three distinct types of LLMs (AI Agents):
-        1. Proposer. This model suggests the next step based on the current context.
-        2. Verifier(s). This model or set of models scrutinizes the accuracy of the step put forward by the proposer. If the step is deemed correct, it will be added to the context.
-        3. Reporter. This model determines when the reasoning process should be concluded, by assessing whether the current conditions can directly lead to the final solution.
-        </h2>
-      </div>
 
         <div class="content has-text-justified">
           <p>
@@ -253,7 +244,7 @@
             new claim(s) based on existing predicates. Subsequently, the verifier(s) evaluate the proposal, determining
             whether the claim(s) can be retained as a new predicate. Finally, the reporter decides if it is the optimal time to
             cease the thought process and deliver the answer.          
-        </p>
+          </p>
           <p>
             Ideally, the proposer should be implemented using a language model pre-trained on the corresponding derivation
             tasks. Verifier(s) should be capable of translating the derivations to appropriate formal systems and verifying
@@ -289,7 +280,7 @@
       </div>
     </div>
     <!-- End a subsection -->
-
+    
   </div>
 </section>
 <!-- End a section -->

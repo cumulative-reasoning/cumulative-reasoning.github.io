@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>ChatDB: Augmenting LLMs with Databases as Their Symbolic Memory</title>
+  <link rel="icon" type="image/x-icon" href="static/images/db.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Cumulative Reasoning with Large Languge Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://yifzhang.com" target="_blank">Yifan Zhang</a>,</span>
+              <span class="author-block">
+                  <a href="" target="_blank">Jingqin Yang</a>,</span>
+              <span class="author-block">
+                  <a href="" target="">Yang Yuan</a>,</span>
+              <span class="author-block">
+                  <a href="" target="">Andrew Chi-Chih Yao</a>,</span>
+
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Tsinghua University, Shanghai Qizhi Institute</span>
+
+<!--                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>-->
+                  </div>
+
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2308.04371.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+
+                                      <!-- ArXiv abstract Link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2308.04371" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+<!--                    <span class="link-block">-->
+<!--                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"-->
+<!--                      class="external-link button is-normal is-rounded is-dark">-->
+<!--                      <span class="icon">-->
+<!--                        <i class="fas fa-file-pdf"></i>-->
+<!--                      </span>-->
+<!--                      <span>Supplementary</span>-->
+<!--                    </a>-->
+<!--                  </span>-->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/iiis-ai/cumulative-reasoning" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser figure-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/cr-illustration.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-justified">
+        An illustration of Cumulative Reasoning (CR) for a 3-premises problem.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser figure -->
+
+
+
+<!-- Teaser video-->
+<!--<section class="hero teaser">-->
+<!--  <div class="container is-max-desktop">-->
+<!--    <div class="hero-body">-->
+<!--      <video poster="" id="tree" autoplay controls muted loop height="100%">-->
+<!--        &lt;!&ndash; Your video here &ndash;&gt;-->
+<!--        <source src="static/videos/banner_video.mp4"-->
+<!--        type="video/mp4">-->
+<!--      </video>-->
+<!--      <h2 class="subtitle has-text-centered">-->
+<!--        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. -->
+<!--      </h2>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!-- End teaser video -->
+
+<!-- Paper abstract-->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            While language models are powerful and versatile, they often fail to address highly complex
+            problems. This is because solving complex problems requires deliberate thinking, which has
+            been only minimally guided during training. In this paper, we propose a new method called
+            Cumulative Reasoning (CR), which employs language models in a cumulative and iterative manner
+            to emulate human thought processes. By decomposing tasks into smaller components, CR
+            streamlines the problem-solving process, rendering it both more manageable and effective. For
+            logical inference tasks, CR consistently outperforms existing methods with an improvement up
+            to 9.3%, and achieves an accuracy of 98.04% on the curated FOLIO wiki dataset. In the context
+            of the Game of 24, CR achieves an accuracy of 98%, which signifies a substantial enhancement
+            of 24% over the previous state-of-the-art method. Finally, on the MATH dataset, we establish
+            new state-of-the-art results without any external tools with 58.0% overall accuracy, surpassing
+            the previous best approach by a margin of 4.2%, and achieving 43% relative improvement on the
+            hardest level 5 problems (22.4% → 32.1%). Additionally, we expand the concept of Cumulative
+            Reasoning to incorporate a Python code environment, deliberately omitting external aids such as
+            retrieval and web browsing and focusing solely on the LLM’s intrinsic reasoning capabilities within
+            a Python code environment. Our experiments in this setting yielded impressive results, with an
+            overall accuracy of 72.2% on the MATH dataset, significantly outperforming the PAL method with
+            38.8% relative improvement
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract-->
+
+<!-- A section -->
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- A subsection -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Memory limitations of large language models</h2>
+        <div class="content has-text-justified">
+          <p>
+            Despite remarkable advances in large language models (LLMs), they often struggle to consistently provide accurate solutions for complex logical inference tasks. To address the limitations, Andrew Chi-Chih Yao and Yang Yuan’s research team recently proposed a “Cumulative Reasoning (CR)” framework, which has significantly boosted the accuracy rate by achieving 98% precision in logical inference tasks and realized 43% relative improvement in the most challenging level 5 MATH problems.
+          </p>
+          <p>
+            Previous approaches, such as the Chain-of Thought (CoT) that “prompts the model to provide stepwise solutions” and the Tree-of-Thought (ToT) that “models the thinking process as a thought search tree”, have overlooked the site for storing intermediate results. The CR framework has been designed to fill the gap by decomposing unmanageable tasks into atomic steps and maintaining a storage site for intermediate results. 
+          </p>
+          <p>
+            Specifically, the CR algorithm utilizes three distinct types of LLMs: the proposer, verifier, and reporter. When the proposer model suggests next steps based on the given context, the verifier model scrutinizes the proposed steps and then adds validated steps to the ongoing reasoning context. Meanwhile, the reporter model evaluates when the iterative and cumulative reasoning process can be completed.            
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End a subsection -->
+    <br>
+    <!-- A subsection -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">ChatDB</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this section, we first describe the overall framework of Cumulative Reasoning (CR).
+            Given a user input in natural language and optional schemas of existing tables in the database
+            (not required if there are no existing tables), ChatDB aims to manipulate the symbolic memory
+            (i.e., the external database) and perform multi-hop reasoning to respond to the user's input.
+            Then, we delve into the details of the chain-of-memory, which is the crucial component of ChatDB.
+          </p>
+        </div>
+
+        <br>
+
+        <h2 class="title is-4">Framework Overview</h2>
+        
+        <h2 class="subtitle has-text-justified">
+        Cumulative Reasoning (CR) uses three distinct types of LLMs (AI Agents):
+        1. Proposer. This model suggests the next step based on the current context.
+        2. Verifier(s). This model or set of models scrutinizes the accuracy of the step put forward by the proposer. If the step is deemed correct, it will be added to the context.
+        3. Reporter. This model determines when the reasoning process should be concluded, by assessing whether the current conditions can directly lead to the final solution.
+        </h2>
+      </div>
+
+        <div class="content has-text-justified">
+          <p>
+            See the Figure for an illustration. In each iteration, the proposer initiates the process by proposing one or a few
+            new claim(s) based on existing predicates. Subsequently, the verifier(s) evaluate the proposal, determining
+            whether the claim(s) can be retained as a new predicate. Finally, the reporter decides if it is the optimal time to
+            cease the thought process and deliver the answer.          
+        </p>
+          <p>
+            Ideally, the proposer should be implemented using a language model pre-trained on the corresponding derivation
+            tasks. Verifier(s) should be capable of translating the derivations to appropriate formal systems and verifying
+            them using symbolic reasoning modules such as a propositional logic solver or a formal math prover, such as
+            AI agents equipped with code environment or symbolic systems. However, for simplicity, one can also use
+            general-purpose foundation models like GPT-4 [40], instantiated with different prompts for these roles.
+          </p>
+          <p>
+            The theoretical motivation of our method lies in the intuitionistic logic, the philosophy of mathematical
+            constructivism, and the topos theory, which imply that the cumulative process of constructing new propositions
+            is the natural way to perform complex reasoning, especially in the realm of (higher-order) logic and pure
+            mathematics.          
+          </p>
+          <p>
+            The primary contribution of our work lies in the synergistic integration of different LLM roles (Proposer,
+            Verifier, and Reporter) within the Cumulative Reasoning framework. This integration facilitates a more
+            effective accumulation and verification of intermediate results, fostering a deeper and more precise reasoning
+            process. The collaborative interplay among these roles (agents), and the interactions among them and the
+            (code) environments, work together in a synergistic way to enhance the reasoning capabilities of the system.            
+          </p>
+        </div>
+
+        <br>
+
+        <h2 class="title is-4">Experimental Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            This framework has been tested on several datasets, including FOLIO wiki and AutoTNLI for logical inference, Game of 24 for arithmetic reasoning, and the MATH dataset for complex mathematical problems. The results show that CR framework consistently surpassed CoT and CoT-SC with a performance margin spanning up to 8.42% on FOLIO wiki and achieved a relative improvement of 9.3% in the framework of the AutoTNLI dataset. It also outperformed ToT by a large margin of 24% in the Game of 24 and realized a substantial relative improvement of 43% in the most difficult problems, classified as Level 5, on the MATH dataset.
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+    <!-- End a subsection -->
+
+  </div>
+</section>
+<!-- End a section -->
+
+<!-- Image carousel -->
+<!--<section class="hero is-small">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <div id="results-carousel" class="carousel results-carousel">-->
+<!--       <div class="item">-->
+<!--        &lt;!&ndash; Your image here &ndash;&gt;-->
+<!--        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>-->
+<!--        <h2 class="subtitle has-text-centered">-->
+<!--          First image description.-->
+<!--        </h2>-->
+<!--      </div>-->
+<!--      <div class="item">-->
+<!--        &lt;!&ndash; Your image here &ndash;&gt;-->
+<!--        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>-->
+<!--        <h2 class="subtitle has-text-centered">-->
+<!--          Second image description.-->
+<!--        </h2>-->
+<!--      </div>-->
+<!--      <div class="item">-->
+<!--        &lt;!&ndash; Your image here &ndash;&gt;-->
+<!--        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>-->
+<!--        <h2 class="subtitle has-text-centered">-->
+<!--         Third image description.-->
+<!--       </h2>-->
+<!--     </div>-->
+<!--     <div class="item">-->
+<!--      &lt;!&ndash; Your image here &ndash;&gt;-->
+<!--      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>-->
+<!--      <h2 class="subtitle has-text-centered">-->
+<!--        Fourth image description.-->
+<!--      </h2>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</section>-->
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      &lt;!&ndash; Paper video. &ndash;&gt;-->
+<!--      <h2 class="title is-3">Video Presentation</h2>-->
+<!--      <div class="columns is-centered has-text-centered">-->
+<!--        <div class="column is-four-fifths">-->
+<!--          -->
+<!--          <div class="publication-video">-->
+<!--            &lt;!&ndash; Youtube embed code here &ndash;&gt;-->
+<!--            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<!--<section class="hero is-small">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h2 class="title is-3">Another Carousel</h2>-->
+<!--      <div id="results-carousel" class="carousel results-carousel">-->
+<!--        <div class="item item-video1">-->
+<!--          <video poster="" id="video1" autoplay controls muted loop height="100%">-->
+<!--            &lt;!&ndash; Your video file here &ndash;&gt;-->
+<!--            <source src="static/videos/carousel1.mp4"-->
+<!--            type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video2">-->
+<!--          <video poster="" id="video2" autoplay controls muted loop height="100%">-->
+<!--            &lt;!&ndash; Your video file here &ndash;&gt;-->
+<!--            <source src="static/videos/carousel2.mp4"-->
+<!--            type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video3">-->
+<!--          <video poster="" id="video3" autoplay controls muted loop height="100%">\-->
+<!--            &lt;!&ndash; Your video file here &ndash;&gt;-->
+<!--            <source src="static/videos/carousel3.mp4"-->
+<!--            type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h2 class="title">Poster</h2>-->
+
+<!--      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">-->
+<!--          </iframe>-->
+<!--        -->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{zhang2023cumulative,
+        title={Cumulative Reasoning With Large Language Models},
+        author={Zhang, Yifan and Yang, Jingqin and Yuan, Yang and Yao, Andrew Chi-Chih},
+        journal={arXiv preprint arXiv:2308.04371},
+        year={2023}
+      }
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            You are free to borrow the code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

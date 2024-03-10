@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Meta tags for social media banners, these should be filled in appropriately as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
   <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
@@ -171,24 +171,18 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            While language models are powerful and versatile, they often fail to address highly complex
-            problems. This is because solving complex problems requires deliberate thinking, which has
-            been only minimally guided during training. In this paper, we propose a new method called
-            Cumulative Reasoning (CR), which employs language models in a cumulative and iterative manner
-            to emulate human thought processes. By decomposing tasks into smaller components, CR
-            streamlines the problem-solving process, rendering it both more manageable and effective. For
-            logical inference tasks, CR consistently outperforms existing methods with an improvement up
-            to 9.3%, and achieves an accuracy of 98.04% on the curated FOLIO wiki dataset. In the context
-            of the Game of 24, CR achieves an accuracy of 98%, which signifies a substantial enhancement
-            of 24% over the previous state-of-the-art method. Finally, on the MATH dataset, we establish
-            new state-of-the-art results without any external tools with 58.0% overall accuracy, surpassing
-            the previous best approach by a margin of 4.2%, and achieving 43% relative improvement on the
-            hardest level 5 problems (22.4% → 32.1%). Additionally, we expand the concept of Cumulative
-            Reasoning to incorporate a Python code environment, deliberately omitting external aids such as
-            retrieval and web browsing and focusing solely on the LLM’s intrinsic reasoning capabilities within
-            a Python code environment. Our experiments in this setting yielded impressive results, with an
-            overall accuracy of 72.2% on the MATH dataset, significantly outperforming the PAL method with
-            38.8% relative improvement. 
+            Despite the recent advancements in language models (LMs), their ability to solve complex problems remains limited. 
+            This paper introduces Cumulative Reasoning (CR), a novel approach that utilizes LMs cumulatively and iteratively, 
+            mirroring human thought processes for problem-solving. CR decomposes tasks into smaller, manageable components 
+            and leverages previous propositions for effective composition, significantly enhancing problem-solving capabilities. 
+            We demonstrate CR's superiority through several complex reasoning tasks: it outperforms existing methods in logical
+            inference tasks with up to a 9.3% improvement, achieving 98.04% accuracy on the curated FOLIO wiki dataset. In the Game of 24,
+            it achieves 98% accuracy, marking a 24% improvement over the prior state-of-the-art. Additionally, CR sets new 
+            state-of-the-art on the MATH dataset, achieving a 4.2% increase from previous methods and a 43% relative improvement in 
+            the most challenging problems. By extending CR to incorporate a code environment without external aids like retrieval
+            or web browsing, we further harness the computational and logical reasoning capabilities of LLMs, achieving a remarkable 72.2% accuracy
+            on the MATH dataset and outperforming the PAL method by 38.8%. Our work not only sets new state-of-the-art but also paves
+            the way toward more sophisticated AI reasoning methods.
           </p>
         </div>
       </div>
@@ -209,17 +203,16 @@
              <b>TLDR:</b> We introduce Cumulative Reasoning (CR) that enhances LLMs' problem-solving abilities by orchestrating an iterative and compositional process involving different roles, demonstrating superior performance across a range of complex tasks.
           </p>
           <p>
-            We first describe the overall framework of Cumulative Reasoning (CR).
-            CR uses three distinct types of LLMs (AI Agents):
+            CR introduces a novel framework leveraging three specialized types of Large Language Models (LLMs) in a collaborative reasoning process:
           </p>
           <p>
-            1. Proposer. This model suggests the next step based on the current context.
+            1. Proposer: Suggests potential steps based on the current context, initiating the reasoning cycle.
           </p>
           <p>
-            2. Verifier(s). This model or set of models scrutinizes the accuracy of the step put forward by the proposer. If the step is deemed correct, it will be added to the context.
+            2. Verifier(s): Assess the proposer's suggestions for accuracy, incorporating valid steps into the ongoing context. 
           </p>
           <p>
-            3. Reporter. This model determines when the reasoning process should be concluded, by assessing whether the current conditions can directly lead to the final solution.    
+            3. Reporter: Determines the appropriate moment to conclude the reasoning process, based on whether the accumulated context leads to a definitive solution.     
           </p>
         </div>
 
@@ -239,17 +232,16 @@
 
         <div class="content has-text-justified">
           <p>
-            See the Figure 2 for an illustration. In each iteration, the proposer initiates the process by proposing one or a few
-            new claim(s) based on existing predicates. Subsequently, the verifier(s) evaluate the proposal, determining
-            whether the claim(s) can be retained as a new predicate. Finally, the reporter decides if it is the optimal time to
-            cease the thought process and deliver the answer.          
+            Our approach is visualized in Figure 2, illustrating how CR iteratively constructs
+            and refines a solution from initial propositions to a final conclusion. In practical terms, the proposer is 
+            ideally a model pre-trained on related derivation tasks, while verifiers translate these proposals into formal
+            systems for validation, employing either symbolic reasoning systems or incorporating a code environment.
           </p>
           <p>
-            Ideally, the proposer should be implemented using a language model pre-trained on the corresponding derivation
-            tasks. Verifier(s) should be capable of translating the derivations to appropriate formal systems and verifying
-            them using symbolic reasoning modules such as a propositional logic solver or a formal math prover, such as
-            AI agents equipped with code environment or symbolic systems. However, for simplicity, one can also use
-            general-purpose foundation models like GPT-4, instantiated with different prompts for these roles.
+            While specialized models offer optimal performance, the flexibility of CR permits effective deployment using 
+            general-purpose LLMs like GPT-4, tailored through role-specific prompting. Notice that in our method, we introduced
+            several different LLMs with fresh eyes by managing the thinking context of each role, beyond the self-verification
+            capabilities of language models.   
           </p>
           <p>
             The theoretical motivation of our method lies in the intuitionistic logic, the philosophy of mathematical
@@ -258,22 +250,21 @@
             mathematics.          
           </p>
           <p>
-            The primary contribution of our work lies in the synergistic integration of different LLM roles (Proposer,
-            Verifier, and Reporter) within the Cumulative Reasoning framework. This integration facilitates a more
-            effective accumulation and verification of intermediate results, fostering a deeper and more precise reasoning
-            process. The collaborative interplay among these roles (agents), and the interactions among them and the
-            (code) environments, work together in a synergistic way to enhance the reasoning capabilities of the system.            
+            The underlying rationale for CR draws from intuitionistic logic and the philosophy of mathematical 
+            constructivism—asserting that a cumulative, constructive approach is inherently suited for complex reasoning tasks. 
+            This methodology not only allows for the dynamic adjustment of the reasoning trajectory based on intermediate 
+            validations but also significantly enhances the problem-solving efficacy of LLMs.           
           </p>
         </div>
 
         <br>
 
-        <h2 class="title is-4">Experimental Results</h2>
+<!--         <h2 class="title is-4">Experimental Results</h2>
         <div class="content has-text-justified">
           <p>
-            This framework has been tested on several datasets, including FOLIO wiki and AutoTNLI for logical inference, Game of 24 for arithmetic reasoning, and the MATH dataset for complex mathematical problems. The results show that CR framework consistently surpassed CoT and CoT-SC with a performance margin spanning up to 8.42% on FOLIO wiki and achieved a relative improvement of 9.3% in the framework of the AutoTNLI dataset. It also outperformed ToT by a large margin of 24% in the Game of 24 and realized a substantial relative improvement of 43% in the most difficult problems, classified as Level 5, on the MATH dataset.
+            This framework has been tested on several datasets, including FOLIO wiki and AutoTNLI for logical inference, Game of 24 for arithmetic reasoning, and the MATH dataset for complex mathematical problems. The results show that our CR framework consistently surpassed CoT and CoT-SC with a performance margin spanning up to 8.42% on FOLIO wiki and achieved a relative improvement of 9.3% in the framework of the AutoTNLI dataset. It also outperformed ToT by a large margin of 24% in the Game of 24 and realized a substantial relative improvement of 43% in the most difficult problems, classified as Level 5, on the MATH dataset.
           </p>
-        </div>
+        </div> -->
 
 
       </div>
